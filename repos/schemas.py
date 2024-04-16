@@ -5,13 +5,13 @@ from typing import List
 class ShowRepo(BaseModel):
     repo: str
     owner: str
-    position_cur: int
-    position_prev: int
+    # position_cur: int
+    # position_prev: int
     stars: int
     watchers: int
     forks: int
     open_issues: int 
-    language: str
+    language: str | None
 
 
 class ShowRepoActivity(BaseModel):

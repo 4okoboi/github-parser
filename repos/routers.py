@@ -1,13 +1,15 @@
 from fastapi import APIRouter
 from typing import List
 from repos.schemas import ShowRepo, ShowRepoActivity
+from repos.services import get_top100_by_stars_repos
+
 repos_router = APIRouter()
 
 @repos_router.get("/top100", response_model=List[ShowRepo])
 async def get_top100_repos(
-    sort: str
+    # sort: str
 ) -> List[ShowRepo]:
-    pass
+    return await get_top100_by_stars_repos()
 
 
 @repos_router.get("/{owner}/{repo}/activity")
